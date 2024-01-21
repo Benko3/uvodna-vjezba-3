@@ -1,0 +1,44 @@
+class vj 3
+{
+    static void Main()
+    {
+        Console.WriteLine("Unesite duljinu stranice x:");
+        if (int.TryParse(Console.ReadLine(), out int x) && x > 0)
+        {
+            Console.WriteLine("Unesite duljinu stranice y:");
+            if (int.TryParse(Console.ReadLine(), out int y) && y > 0)
+            {
+                Console.WriteLine("Unesite duljinu stranice z:");
+                if (int.TryParse(Console.ReadLine(), out int z) && z > 0)
+                {
+                    if (JePravokutniTrokut(x, y, z))
+                    {
+                        Console.WriteLine("Ovo su duljine stranica pravokutnog trokuta.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ove duljine stranica ne čine pravokutni trokut.");
+                    }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Unesite ispravnu vrijednost za stranicu z (veću od 0).");
+                        }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Unesite ispravnu vrijednost za stranicu y (veću od 0).");
+                            }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Unesite ispravnu vrijednost za stranicu x (veću od 0).");
+                                }
+    }
+
+    static bool JePravokutniTrokut(int x, int y, int z)
+    {
+     
+        return x * x + y * y == z * z || x * x + z * z == y * y || y * y + z * z == x * x;
+    }
+}
